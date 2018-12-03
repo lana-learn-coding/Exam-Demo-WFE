@@ -1,0 +1,24 @@
+<h3 align="center">Danh sách đọc</h3>
+<br>
+<div align="center" style="width: 100%">
+  <br>
+  <a routerLink="" style="color: blue">về trang chủ</a> | <a style="color: blue" (click)="toReadedList()">đến danh sách đã đọc</a>
+  <br>
+  <table align="center" border="1" style="width: 60%">
+    <tr>
+      <th colspan="2">Danh sách đọc</th>
+    </tr>
+    <tr *ngFor="let book of bookService.bookList.readingList">
+      <td>{{book.name}}</td>
+      <td style="width: 10%" (click)="markAsReaded(book.id,book.name)"><i class="btn btn-primary" style="width: 100%;">đã đọc</i></td>
+    </tr>
+  </table>
+  <br>
+  <label>
+    add new book to reading list:
+    <br>
+    <input type="text" #bookName>
+    <button (click)="add(bookName.value)">Add</button>
+  </label>
+</div>
+<br>

@@ -1,0 +1,18 @@
+<h3 align="center">Danh sách đã đọc</h3>
+<br>
+<div align="center" style="width: 100%">
+  <br>
+  <a  style="color: blue" routerLink="">về trang chủ</a> | <a style="color: blue" (click)="toReadingList()">về danh sách đọc</a>
+  <br>
+  <table align="center" border="1" style="width: 60%">
+    <tr>
+      <th colspan="2">Danh sách đã đọc</th>
+    </tr>
+    <tr *ngFor="let book of bookService.bookList.readedList">
+      <td >{{book.name}}</td>
+      <td style="width: 10%" (click)="markAsReading(book.id,book.name)"><i class="btn btn-primary" style="width: 100%">đọc lại</i></td>
+    </tr>
+  </table>
+  <br>
+</div>
+
